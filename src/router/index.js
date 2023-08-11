@@ -1,12 +1,13 @@
 // 1. 定义路由组件.
 // 也可以从其他文件导入
-import{createRouter,createWebHistory}from'vue-router'
+import{createRouter,createWebHistory,useRoute}from'vue-router'
 import Main from '@/components/Main.vue'
 import Login from '@/components/Login.vue'
-
+import Home from'@/components/Home.vue'
 const routes = [
-  { path: '/', component: Main },
-  { path: '/login', component: Login },
+  { path: '/',name:'主页', component: Main },
+  { path: '/login', name:'登录',component: Login },
+  { path: '/home', name:'哈哈',component: Home,props:true },
 ]
 
 // 3. 创建路由实例并传递 `routes` 配置

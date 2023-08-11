@@ -1,10 +1,29 @@
 <script>
+import { onMounted } from 'vue';
+import { useRouter ,useRoute} from 'vue-router';
 export default{
-    name:'MainComp'
+    name:'MainComp',
+    setup(){
+        //传输参数
+        const router = useRouter()
+        //接收参数
+        const route=useRoute()
+        onMounted(()=>{
+            console.log(route.query)
+        })
+        function bu(){
+            router.push('/login')
+        }
+
+        return {
+            bu,
+        }
+    }
 }
 </script>
 <template>
     <a>点我</a>
+    <el-button @click="bu">跳转</el-button>
 </template>
 <style scoped>
     * {

@@ -3,6 +3,7 @@ import router from '@/router/index.js'
 import ElementPlus from 'element-plus'
 import App from './App.vue'
 import 'element-plus/dist/index.css'
+import'@/assets/index.css'
 // const app = Vue.createApp({})
 const app=createApp(App)
 //确保 _use_ 路由实例使

@@ -2,6 +2,7 @@
 <script>
 import{ref}from'vue'
 import { ElMessage } from 'element-plus'
+import { useRouter } from 'vue-router'
 export default{
     name:'LoginComp',
     
@@ -15,9 +16,17 @@ export default{
     type: 'error',
   })
 }
+    const router= useRouter()
         function bu(name,password){
             if(name===username&&password===userpassword){
-                window.location.href="http://www.baidu.com"
+                router.push({
+                    path: '/home',
+                    query:{
+                        name,
+                        password,
+                    }
+                })
+                //window.location.href="http://www.baidu.com"
             }else{
             err()
          
@@ -51,11 +60,11 @@ export default{
        
          <el-form  :model="form" label-width="120px" >
     <el-form-item  label="用户名：">
-      <el-input class="input1" v-model="form.name" placeholder="请输入您的用户名"/>
+      <el-input style="width: 400px;"  v-model="form.name" placeholder="请输入您的用户名"/>
     </el-form-item>
 
     <el-form-item label="密码：">
-      <el-input class="input1" v-model="form.password"
+      <el-input style="width: 400px;" v-model="form.password"
     type="password"
     placeholder="请输入您的密码"
     show-password>
