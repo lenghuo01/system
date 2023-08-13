@@ -4,10 +4,21 @@ import{createRouter,createWebHistory,useRoute}from'vue-router'
 import Main from '@/components/Main.vue'
 import Login from '@/components/Login.vue'
 import Home from'@/components/Home.vue'
+import UpLoad from '@/components/layout/diz/upload.vue'
+import MyFiles from '@/components/layout/diz/MyFiles.vue'
 const routes = [
   { path: '/',name:'主页', component: Main },
   { path: '/login', name:'登录',component: Login },
-  { path: '/home', name:'哈哈',component: Home,props:true },
+  { path: '/home', name:'哈哈',component: Home,props:true ,
+   
+  children:[
+    { path:'upload',component:UpLoad},
+    { path:'myfiles',component:MyFiles},
+   
+  ]
+
+
+  },
 ]
 
 // 3. 创建路由实例并传递 `routes` 配置

@@ -1,8 +1,9 @@
 <script>
+
 export default{
     name:'HederComp',
     props:['username','bu'],
-
+    
     setup(){
 
 
@@ -16,23 +17,43 @@ export default{
 </script>
 <template>
     <div class="container">
-        <span style="font-size: 30px;font-family: Arial, Helvetica, sans-serif;position: relative;left:10px;">世界商店</span>
-        <img src="https://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/a2cc7cd98d1001e900e51e21bb0e7bec55e797c6.jpg" 
-        style="border-radius: 50%,50%;position: relative;left: 50px;height: 80%;"
-        >
-        <div style="position: relative;font-size: 13px; left: 60px;">用户：{{ username }}</div>
-        <div style="position: relative;top: 30px;left: -4px;">关注 : 0</div>
-        <!-- <button style="position: relative;left: 400px;">关注的商店</button> -->
+        <div style="font-size: 30px;font-family: Arial, Helvetica, sans-serif;margin-left: 10px;">世界商店</div>
         
-        <el-button round style="position: relative;left:calc(100% - 400px);top:16px;width: 100px;height: 40px;" @click="bu">返回</el-button>
+        <div style="margin-left: 60px;display: flex;">
+        <el-dropdown>
+    <span class="el-dropdown-link" style="height:100%px;width: 160px;display: flex;">
+        
+       <div style="width: 60px;height: 100%;"><img src="https://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/a2cc7cd98d1001e900e51e21bb0e7bec55e797c6.jpg" 
+        style="height: 95%;"
+        ></div>
+       <div style="margin-left: 10px;">
+       <div style="font-size: 13px;height: 20px;width: 100px;margin-top: 10px;">用户：{{ username }}</div>
+        <div style="height: 20px;font-size: 13px;margin-top: 10px;">关注 : 0</div>
+    </div>
+      <el-icon class="el-icon--right">
+    
+      </el-icon>
+    </span>
+    <template #dropdown>
+      <el-dropdown-menu>
+        <el-dropdown-item>账号信息</el-dropdown-item>
+        <el-dropdown-item>修改密码</el-dropdown-item>
+      </el-dropdown-menu>
+    </template>
+  </el-dropdown>
+</div >
 
+        <el-button round style="width: 100px;height: 40px;margin-top: 14px;margin-left: auto;
+        " @click="bu">返回</el-button>
+       
     </div>
 </template>
 <style scoped>
 .container{
-    height: 5.5rem;
+    height: calc(5.5rem - 1px);
     display: flex;
     line-height: 2;
+    border-bottom: 1px solid #dcdee2;
 }
 .items-center{
     text-align: center;

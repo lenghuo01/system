@@ -56,9 +56,10 @@ export default{
     </div>
 
     <div class="Second">
+        <div style="background-color: rgb(247, 245, 243);height: 600px;width: 700px;position: relative;top: 50px;left: 23px;">
         <h1 >欢迎来到世界商店</h1>
        
-         <el-form  :model="form" label-width="120px" >
+         <el-form  :model="form" label-width="120px" style="position: relative;top: 60px;left: 0px;">
     <el-form-item  label="用户名：">
       <el-input style="width: 400px;"  v-model="form.name" placeholder="请输入您的用户名"/>
     </el-form-item>
@@ -73,13 +74,18 @@ export default{
     <el-form-item>
       
         <el-button @click="bu(form.name,form.password)">登录</el-button>
-            
-       
+           
       
         
     </el-form-item>
     </el-form> 
+    <img style="width: 700px; height: 200px; position:relative;top: 130px;" src="http://picture.itchenliang.club/static/png/mountain-48ab7c52.png" alt="">
+       
+</div>
+
+
     </div>
+   
     </div> 
    
  
@@ -104,14 +110,16 @@ background: url('https://img.zcool.cn/community/0142dd5ac1b73ca801218207b41dbd.j
 .box1{
     display: flex;
     justify-content: space-between;
+    
+
 }
 body{
     margin: 0;
 }
 .Second h1{
-    left: 1031px;
-top: 160px;
-width: 660px;
+    position: relative;
+
+ top: 20px;
 height: 78px;
 opacity: 1;
 /** 文本1 */
