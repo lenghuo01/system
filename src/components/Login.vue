@@ -20,7 +20,7 @@ export default{
         function bu(name,password){
             if(name===username&&password===userpassword){
                 router.push({
-                    path: '/home',
+                    path: '/home/upload',
                     query:{
                         name,
                         password,

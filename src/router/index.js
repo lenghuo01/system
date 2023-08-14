@@ -5,7 +5,7 @@ import Main from '@/components/Main.vue'
 import Login from '@/components/Login.vue'
 import Home from'@/components/Home.vue'
 import UpLoad from '@/components/layout/diz/upload.vue'
-import MyFiles from '@/components/layout/diz/MyFiles.vue'
+import MyFiles from '@/components/layout/diz/myfiles.vue'
 const routes = [
   { path: '/',name:'主页', component: Main },
   { path: '/login', name:'登录',component: Login },
