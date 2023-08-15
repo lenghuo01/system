@@ -30,7 +30,21 @@ export default{
         <el-button type="primary" size="large">Storage05</el-button>
         </el-row>
         </div>
-        <div style="background-color:white;height: 25rem;width:calc(100%rem - 40px);padding: 20px;margin: 20px;"></div>
+        <div style="background-color:white;height: 25rem;width:calc(100%rem - 40px);padding: 20px;margin: 20px;">
+            <el-dropdown split-button >
+      Dropdown List
+      
+      <template #dropdown>
+        <el-dropdown-menu>
+          <el-dropdown-item>Action 1</el-dropdown-item>
+          <el-dropdown-item>Action 2</el-dropdown-item>
+          <el-dropdown-item>Action 3</el-dropdown-item>
+          <el-dropdown-item>Action 4</el-dropdown-item>
+          <el-dropdown-item>Action 5</el-dropdown-item>
+        </el-dropdown-menu>
+      </template>
+    </el-dropdown>
+        </div>
         <div style="display: flex;">
         <div style="margin: 10px;width: calc(50% - 20px);height: 10rem;background-color: white;">
             hh

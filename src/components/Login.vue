@@ -3,12 +3,13 @@
 import{ref}from'vue'
 import { ElMessage } from 'element-plus'
 import { useRouter } from 'vue-router'
+import{gao2}from'@/http/axios.js'
+
 export default{
     name:'LoginComp',
     
     setup(){
-        const username='张三'
-        const userpassword='123456'
+   
         const err = () => {
   ElMessage({
     showClose: true,
@@ -17,8 +18,11 @@ export default{
   })
 }
     const router= useRouter()
-        function bu(name,password){
-            if(name===username&&password===userpassword){
+    //发起后端请求
+       async function bu(name,password){
+        const result=await gao2.post(`/login`)
+
+            if(name===result.data.data.username&&password===result.data.data.password){
                 router.push({
                     path: '/home/upload',
                     query:{
