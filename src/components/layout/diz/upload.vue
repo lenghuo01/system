@@ -1,14 +1,48 @@
 <script>
-
+import {onMounted, onUnmounted, ref}from 'vue'
+import{ myserver}from'@/http/axios.js'
 export default{
 
     name:'UpLoad',
     setup(){
+        const imgurl=ref('')
+        const formData=new FormData()
+        const file=ref(null)
+        const filename=ref('')
+     
+        const base64read=new FileReader()
+        function getReadResult(){
+            imgurl.value=base64read.result
+        }
+        onMounted(()=>{
+            base64read.addEventListener('load',getReadResult)
+        })
+        onUnmounted(()=>[
+            base64read.removeEventListener('load',getReadResult)
+        ])
 
-
+        const tijiao=function(){
+            file.value.click()
+        }
+        const handlefile=function(){
+         filename.value=file.value.files[0].name
+         formData.append('file',file.value.files[0])
+         base64read.readAsDataURL(file.value.files[0])
+        }
+        //表单上传文件
+        function testServer(){
+            myserver.post('/upload',formData)
+        }
+        //转成base64上传
+        function uploadBase64(){
+            const base64=imgurl.value.split(',')[1]
+            console.log(base64)
+            myserver.post('/upload',{file:base64})
+        }
 
         return {
-
+            tijiao,file,filename,handlefile,testServer,
+            uploadBase64,imgurl
         }
     }
 }
@@ -44,6 +78,20 @@ export default{
         </el-dropdown-menu>
       </template>
     </el-dropdown>
+            <div>
+                <el-button @click="tijiao">选择文件</el-button>
+                <input @change="handlefile" type="file" ref="file" style="height: 0px;width: 0px;">
+                <div v-show="filename" style="color:  #79bbff;">{{ filename }}</div>
+             <div>
+                <el-button @click="testServer">提交文件</el-button>
+             </div>  
+             <div>
+                <el-button @click="uploadBase64">64上传</el-button>
+             </div>
+             <div>
+                <img style="width: 30px;" v-show="filename" :src="imgurl" alt="">
+             </div>
+            </div>
         </div>
         <div style="display: flex;">
         <div style="margin: 10px;width: calc(50% - 20px);height: 10rem;background-color: white;">

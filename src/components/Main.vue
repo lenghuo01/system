@@ -22,8 +22,8 @@ export default{
 }
 </script>
 <template>
-    <a>点我</a>
-    <el-button @click="bu">跳转</el-button>
+    <a @click="bu">点我</a>
+ 
 </template>
 <style scoped>
     * {
