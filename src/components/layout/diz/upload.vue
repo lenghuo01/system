@@ -31,13 +31,13 @@ export default{
         }
         //表单上传文件
         function testServer(){
-            myserver.post('/upload',formData)
+            myserver.post('/myfiles',formData)
         }
         //转成base64上传
         function uploadBase64(){
             const base64=imgurl.value.split(',')[1]
             console.log(base64)
-            myserver.post('/upload',{file:base64})
+            myserver.post('/myfiles',{file:base64})
         }
 
         return {

@@ -12,6 +12,13 @@ const gao2=axios.create({
 const myserver=axios.create({
     baseURL:'http://localhost:8080',
 })
+//拦截器
+gao2.interceptors.request.use((config)=>{
+    //console.log(config)
+    if(config.url!=='/login'){
+    config.headers['token']=localStorage.getItem('token')}
+   return config
+})
 export{
     gao1,
     gao2,

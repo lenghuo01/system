@@ -2,10 +2,10 @@
 
 export default{
     name:'HederComp',
-    props:['username','bu'],
+    props:['username','loginout'],
     
     setup(){
-
+     
 
 
         return {
@@ -44,7 +44,7 @@ export default{
 </div >
 
         <el-button round style="width: 100px;height: 40px;margin-top: 14px;margin-left: auto;
-        " @click="bu">返回</el-button>
+        " @click="loginout">返回</el-button>
        
     </div>
 </template>
@@ -58,6 +58,9 @@ export default{
 .items-center{
     text-align: center;
    
+}
+.el-dropdown-link:hover{
+  cursor: pointer;
 }
 
 </style>

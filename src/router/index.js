@@ -30,4 +30,17 @@ const router =createRouter({
   routes, // `routes: routes` 的缩写
 })
 
+router.beforeEach(async(to, from) => {
+  // ...
+  // 返回 false 以取消导航
+  const result=localStorage.getItem('token')
+  //console.log(localStorage.getItem('token'))
+  if(to.path==='/home'&&result){
+  
+  return {
+    path:'/login'
+  }
+}
+
+})
 export default router

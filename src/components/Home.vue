@@ -17,12 +17,13 @@ export default{
         const router=useRouter()
         //console.log(route.query.name)
         const name1=ref(route.query.name)
-        function bu(){
+        function loginout(){
             router.push('/login')
+            localStorage.removeItem('token')
         }
 
         return {
-            bu,
+            loginout,
             name1,
         }
     }
@@ -30,7 +31,7 @@ export default{
 
 </script>
 <template>
-    <heder-comp :username="name1" :bu="bu"></heder-comp>
+    <heder-comp :username="name1" :loginout="loginout"></heder-comp>
     <div class="body1">
         <nav-comp></nav-comp>
     <body-comp></body-comp>

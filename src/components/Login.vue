@@ -21,7 +21,7 @@ export default{
     //发起后端请求
        async function bu(name,password){
         const result=await gao2.post(`/login`)
-
+            localStorage.setItem('token',result.data.token)
             if(name===result.data.data.username&&password===result.data.data.password){
                 router.push({
                     path: '/home/upload',
