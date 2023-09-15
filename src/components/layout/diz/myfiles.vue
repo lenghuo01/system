@@ -14,13 +14,13 @@ export default{
         const total=ref(0)
         const SIZE=20
         async function getTableData(size,curPage){
-            const {data:res}=await gao2.get('/img/list',{
+            const {data:res}=await gao2.get(`/img/list`,{
                 params:{
                     pageSize:size,
                     pageNum:curPage
                 }
             })
-            console.log(res)
+            //console.log(res)
             //console.log(res.data)
             tableData.value=res.data.items
             total.value=res.data.totalSize
@@ -36,7 +36,7 @@ export default{
             navigator.clipboard.writeText(lineinfo.row.fileUrl)
             ElMessage({
                 message:'复制成功',
-                type:'sucess'
+                type:'success'
             })
         }
         const cityCode=ref()
@@ -112,8 +112,8 @@ export default{
             5.文件最近更新时间
             6.操作（下载）（复制分享连接）
          -->
-        <el-table :data="tableData" :empty-text="暂无数据" style="width: 100%;">
-            <el-table-column  prop="fileName" label="文件名" width="150" />
+        <el-table :data="tableData" empty-text="暂无数据" >
+            <el-table-column  prop="filename" label="文件名" width="150" />
          <el-table-column  prop="fileSize" label="文件大小" width="150" />
          <el-table-column  label="文件URL" width="150" >
             <template v-slot:default="scope">
