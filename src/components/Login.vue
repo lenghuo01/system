@@ -3,14 +3,14 @@
 import{ref}from'vue'
 import { ElMessage } from 'element-plus'
 import { useRouter } from 'vue-router'
-import{gao2}from'@/http/axios.js'
+//import{gao2}from'@/http/axios.js'
 
 export default{
     name:'LoginComp',
     
     setup(){
   const username ="张三"
-  const password='123456'
+  const password1='123456'
         const err = () => {
   ElMessage({
     showClose: true,
@@ -23,7 +23,7 @@ export default{
        async function bu(name,password){
        // const result=await gao2.post(`/login`)
             //localStorage.setItem('token',result.data.token)
-            if(name===username&&password==password){
+            if(name===username&&password==password1){
             //     router.push({
             //         path: '/home/upload',
             //         query:{
@@ -39,7 +39,6 @@ export default{
             //             password,
             //         }
             //     })
-                //window.location.href="http://www.baidu.com"
                 router.push({
                     path: '/home/upload',
                     query:{
