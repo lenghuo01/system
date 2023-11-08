@@ -76,7 +76,7 @@ export default{
 
     <div class="Second">
         <div style="background-color: rgb(247, 245, 243);height: 600px;width: 700px;position: relative;top: 50px;left: 23px;">
-        <h1 >欢迎来到世界商店</h1>
+        <h1 >二手书交易中心</h1>
        
          <el-form  :model="form" label-width="120px" style="position: relative;top: 60px;left: 0px;">
     <el-form-item  label="用户名：">
@@ -98,7 +98,7 @@ export default{
         
     </el-form-item>
     </el-form> 
-    <img style="width: 700px; height: 200px; position:relative;top: 130px;" src="http://picture.itchenliang.club/static/png/mountain-48ab7c52.png" alt="">
+    <img style="width: 700px; height: 200px; position:relative;top: 130px;" src="https://picture.itchenliang.club/static/png/mountain-48ab7c52.png" alt="">
        
 </div>
 
