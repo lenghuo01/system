@@ -6,6 +6,7 @@ import Login from '@/components/Login.vue'
 import Home from'@/components/Home.vue'
 import UpLoad from '@/components/layout/diz/upload.vue'
 import MyFiles from '@/components/layout/diz/myfiles.vue'
+import ATest from '@/components/layout/diz/test.vue'
 const routes = [
   { path: '/',name:'主页', component: Main },
   { path: '/login', name:'登录',component: Login },
@@ -14,7 +15,7 @@ const routes = [
   children:[
     { path:'upload',component:UpLoad},
     { path:'myfiles',component:MyFiles},
-   
+    {path:'test',component:ATest}
   ]
 
 
