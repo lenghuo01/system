@@ -98,7 +98,7 @@ export default{
         
     </el-form-item>
     </el-form> 
-    <img style="width: 700px; height: 200px; position:relative;top: 130px;" src="https://picture.itchenliang.club/static/png/mountain-48ab7c52.png" alt="">
+    <img style="width: 700px; height: 200px; position:relative;top: 130px;" src="http://picture.itchenliang.club/static/png/mountain-48ab7c52.png" alt="">
        
 </div>
 
