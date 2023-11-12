@@ -17,7 +17,7 @@ export default{
 </script>
 <template>
     <div class="container">
-        <div style="font-size: 30px;font-family: Arial, Helvetica, sans-serif;margin-left: 10px;">世界商店</div>
+        <div style="font-size: 30px;font-family: Arial, Helvetica, sans-serif;margin-left: 10px;">二手书交易</div>
         
         <div style="margin-left: 60px;display: flex;">
         <el-dropdown>

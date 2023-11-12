@@ -22,15 +22,6 @@ export default{
 }
 </script>
 <template>
- 
-    <!-- <div class="video-background">
-    <video autoplay muted loop id="bgVideo" >
-      <source src="./img/beijing.mp4" type="video/mp4">
-    </video>
- 
- 
-     <a @click="bu">点击登录</a>
-  </div> -->
   <div class="container">
     <video
       class="video-bg"

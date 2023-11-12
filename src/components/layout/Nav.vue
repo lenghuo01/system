@@ -9,8 +9,9 @@ export default{
          const route=useRoute()
          
         const menuItemPath=[
-            {path:'/home/upload',text:'上传文件'},
-            {path:'/home/myfiles',text:'我的文件'}
+            {path:'/home/upload',text:'上传图书'},
+            {path:'/home/mybooks',text:'查询图书'},
+            {path:'/home/myfiles',text:'我的文件'},
         ]
         const defaultMenu=ref(menuItemPath[0].path)
         const menuItemPathRef=ref(menuItemPath)
