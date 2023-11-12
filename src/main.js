@@ -11,7 +11,6 @@ const app=createApp(App)
 //整个应用支持路由。
 app.use(router)
 app.use(ElementPlus)
-
 app.mount('#app')
 
 // 现在，应用已经启动了！
