@@ -27,7 +27,7 @@ export default {
       isshow.value=1
       //获取数据
       const qingyunkeRes = await fetch(
-        `http://124.223.90.239:8000/api/qingyunke?msg=${ques.value}`
+        `https://124.223.90.239:8000/api/qingyunke?msg=${ques.value}`
       )
       //将数据转为JavaScript对象
       const qingyunkAns = await qingyunkeRes.json()
