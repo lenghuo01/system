@@ -7,6 +7,7 @@ import Home from'@/components/Home.vue'
 import UpLoad from '@/components/layout/diz/upload.vue'
 import MyFiles from '@/components/layout/diz/myfiles.vue'
 import MyBooks from '@/components/layout/diz/mybooks.vue'
+import KeFu from '@/components/layout/diz/kefu.vue'
 const routes = [
   { path: '/',name:'主页', component: Main },
   { path: '/login', name:'登录',component: Login },
@@ -15,7 +16,8 @@ const routes = [
   children:[
     { path:'upload',component:UpLoad},
     { path:'myfiles',component:MyFiles},
-    {path:'mybooks',component:MyBooks}
+    {path:'mybooks',component:MyBooks},
+    {path:'kefu',component:KeFu}
   ]
 
 

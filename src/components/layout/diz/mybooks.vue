@@ -18,15 +18,37 @@
 
   </el-upload> -->
   <div style="display: flex;width: 100%; justify-content: space-around; padding: 20px;">
+
+  <div style="background-color: antiquewhite;height: 250px;width: 220px;">
+    <img src="@/components/img/upload.png" alt="" height="200px" width="200px" style="margin: 10px;border-radius: 10%;">
+    <div style="text-align: center;">测试文件</div>
+  </div>
+
+  <div style="background-color: antiquewhite;height: 250px;width: 220px;">
+    <img src="@/components/img/computerOrg.jpg" alt="" height="200px" width="200px" style="margin: 10px;border-radius: 10%;">
+    <div style="text-align: center;">计算机组成原理</div>
+  </div>
   
-  <img src="@/components/img/upload.png" alt="" height="200px" width="200px">
-  <img src="@/components/img/computerOrg.jpg" alt="" height="200px" width="200px">
-  <img src="@/components/img/Java.jpg" alt="" height="200px" width="200px">
+  <div style="background-color: antiquewhite;height: 250px;width: 220px;">
+    <img src="@/components/img/Java.jpg" alt="" height="200px" width="200px" style="margin: 10px;border-radius: 10%;">
+    <div style="text-align: center;">计算机组成原理</div>
+  </div>
  </div>
  <div style="display: flex;width: 100%; justify-content: space-around;">
-  <img src="@/components/img/shiyan.jpg" alt="" height="200px" width="200px">
-  <img src="@/components/img/suiji.jpg" alt="" height="200px" width="200px">
-  <img src="@/components/img/wuli.jpg" alt="" height="200px" width="200px">
+  <div style="background-color: antiquewhite;height: 250px;width: 220px;">
+    <img src="@/components/img/shiyan.jpg" alt="" height="200px" width="200px" style="margin: 10px;border-radius: 10%;">
+    <div style="text-align: center;">计算机组成原理</div>
+  </div>
+
+  <div style="background-color: antiquewhite;height: 250px;width: 220px;">
+    <img src="@/components/img/suiji.jpg" alt="" height="200px" width="200px" style="margin: 10px;border-radius: 10%;">
+    <div style="text-align: center;">计算机组成原理</div>
+  </div>
+
+  <div style="background-color: antiquewhite;height: 250px;width: 220px;">
+    <img src="@/components/img/wuli.jpg" alt="" height="200px" width="200px" style="margin: 10px;border-radius: 10%;">
+    <div style="text-align: center;">计算机组成原理</div>
+  </div>
 
   </div>
     
@@ -92,6 +114,7 @@ setup(){
   width: calc(100% - 20px);
   margin: 10px;
   background-color: #ffffff;
+
 }
 .el-row {
   margin-bottom: 20px;

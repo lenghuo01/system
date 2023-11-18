@@ -147,11 +147,15 @@ export default{
             </div>-->
         </div> 
         <div style="display: flex;">
-        <div style="margin: 10px;width: calc(50% - 20px);height: 10rem;background-color: white;">
-            hh
+        <div style="margin: 10px;width: calc(50% - 20px);height: 10rem;background-color: white;border-radius: 1rem;">
+            <div style="margin-left: 10px;">版本介绍</div>
+            <div style="margin: 10px;">数目名称：</div>
+            <div style="margin-left: 10px;">版本信息：</div>
         </div>
-        <div style="margin: 10px;width: calc(50% - 20px);height: 10rem;background-color: white;">
-            hh
+        <div style="margin: 10px;width: calc(50% - 20px);height: 10rem;background-color: white;border-radius: 1rem;">
+            
+            <div style="margin-left: 10px;">破损程度描述</div>
+          
         </div>
     </div>
 
