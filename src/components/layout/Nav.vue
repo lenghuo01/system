@@ -11,8 +11,9 @@ export default{
         const menuItemPath=[
             {path:'/home/upload',text:'上传图书'},
             {path:'/home/mybooks',text:'查询图书'},
-            {path:'/home/myfiles',text:'我的文件'},
+            {path:'/home/test',text:'我的图书'},
             {path:'/home/kefu',text:'在线客服'},
+            
         ]
         const defaultMenu=ref(menuItemPath[0].path)
         const menuItemPathRef=ref(menuItemPath)
