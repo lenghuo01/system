@@ -12,12 +12,11 @@ export default{
             {path:'/home/upload',text:'上传图书'},
             {path:'/home/mybooks',text:'查询图书'},
             {path:'/home/test',text:'我的图书'},
-            {path:'/home/kefu',text:'在线客服'},
-            
+            {path:'/home/kefu',text:'在线客服'},  
+            {path:'/home/guizi',text:'智能柜'}  
         ]
-        const defaultMenu=ref(menuItemPath[0].path)
+        const defaultMenu=ref(menuItemPath[4].path)
         const menuItemPathRef=ref(menuItemPath)
-     
         watch(
             ()=>route.path,
             ()=>{

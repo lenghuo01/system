@@ -8,7 +8,8 @@ import UpLoad from '@/components/layout/diz/upload.vue'
 import CeShi from '@/components/layout/diz/test.vue'
 import MyBooks from '@/components/layout/diz/mybooks.vue'
 import KeFu from '@/components/layout/diz/kefu.vue'
-
+import IntellectBox from'@/components/layout/diz/IntellectBox/guizi.vue'
+import component from 'element-plus/es/components/tree-select/src/tree-select-option.mjs'
 const routes = [
   { path: '/',name:'主页', component: Main },
   { path: '/login', name:'登录',component: Login },
@@ -19,6 +20,7 @@ const routes = [
     { path:'test',component:CeShi},
     {path:'mybooks',component:MyBooks},
     {path:'kefu',component:KeFu},
+     {path:'guizi',component:IntellectBox}
   ]
 
 

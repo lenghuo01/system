@@ -9,12 +9,16 @@ const server=http.createServer((req,res)=>{
     })
     res.writeHead(200,{
         token:'123',
-        'Access-Control-Allow-Origin':'*',
-        'Access-Control-Allow-Headers':'content-type',
+         'Access-Control-Allow-Origin':'*',
+         'Access-Control-Allow-Headers':'content-type',
     })
-    res.end('hello')
+    const obj={
+      username:"张三",
+      password:"123456"
+    }
+    const jsonObj=JSON.stringify(obj)
+    res.end(jsonObj)
 })
-
 server.listen(8080,()=>{
     console.log('启动了')
 })

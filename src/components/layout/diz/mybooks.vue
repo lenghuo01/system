@@ -35,8 +35,8 @@
     <div style="text-align: center;">计算机组成原理</div>
   </div>
  </div>
- <div style="display: flex;width: 100%; justify-content: space-around;">
-  <div style="background-color: antiquewhite;height: 250px;width: 220px;">
+ <div style="display: flex;width: 100%; justify-content: space-around;" >
+  <div style="background-color: antiquewhite;height: 250px;width: 220px;" @click="dianji">
     <img src="@/components/img/shiyan.jpg" alt="" height="200px" width="200px" style="margin: 10px;border-radius: 10%;">
     <div style="text-align: center;">计算机组成原理</div>
   </div>
