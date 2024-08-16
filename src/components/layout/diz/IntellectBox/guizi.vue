@@ -1,6 +1,6 @@
 <script>
 import * as echarts from 'echarts';
-import { onMounted, ref, onUnmounted, markRaw } from 'vue'
+import { onMounted, ref, onUnmounted, markRaw,watch } from 'vue'
 import { connectWebsocket, destroyWebsocket, sendMessage } from '@/http/websocket.js'
 import Box from './Box.vue'
 export default {
@@ -306,6 +306,17 @@ export default {
       // 设置图表容器的样式
     }
 
+    function throttle(func, wait) {
+      let lastTime = 0;
+      return function (...args) {
+        const now = new Date().getTime();
+        if (now - lastTime > wait) {
+          lastTime = now;
+          return func.apply(this, args);
+        }
+      };
+    }
+
     function getCurrentTime() {
       var now = new Date();
       var hours = now.getHours();
@@ -326,12 +337,14 @@ export default {
       var currentTime = hours + ':' + minutes + ':' + seconds;
       return currentTime;
     }
+
+    
     function getPressStatus(PressStatus) {
       pressStatus.value = PressStatus
-      if(pressStatus.value == 'ON')pressStatus1.value = '开启'
-      else if(pressStatus.value == 'PreStart')pressStatus1.value = '预启动'
-      else if(pressStatus.value == 'OFF')pressStatus1.value = '关机'
-      else if(pressStatus.value == 'FAULT')pressStatus1.value = '故障'
+      if (pressStatus.value == 'ON') pressStatus1.value = '开启'
+      else if (pressStatus.value == 'PreStart') pressStatus1.value = '预启动'
+      else if (pressStatus.value == 'OFF') pressStatus1.value = '关机'
+      else if (pressStatus.value == 'FAULT') pressStatus1.value = '故障'
     }
     function getBoxStatus(BoxStatus) {
       boxStatus.value = BoxStatus
@@ -373,7 +386,27 @@ export default {
         tempDiff: temDiff.value
       }
       sendMessage(JSON.stringify(obj))
+      throttledGetCurrentTime.value= throttle(delay, postTime.value*1000);
     }
+    function delay(data){
+      temperature.value.push(data)
+      currentTime.value.push(getCurrentTime())
+      if (currentTime.value.length >= 100) {
+        currentTime.value.shift()
+        temperature.value.shift()
+      }
+    }
+    const throttledGetCurrentTime = ref()
+    throttledGetCurrentTime.value= throttle(delay, postTime.value*1000);
+    watch(()=>postTime.value, (newValue, oldValue) => {
+        console.log(newValue)
+       // 使用节流函数包装 getCurrentTime
+       
+      }, {
+        immediate: true,
+        deep: true
+      });
+    
     let count = ref(true)
     const tempDiff1 = ref(10)
     const deviceAddr1 = ref(10)
@@ -390,12 +423,8 @@ export default {
       timeOffline1.value = data.temp_offline
       deviceAddr1.value = data.device_addr
       // deviceAddr1.value = data.
-      temperature.value.push(data.temperature)
-      currentTime.value.push(getCurrentTime())
-      if (currentTime.value.length >= 100) {
-        currentTime.value.shift()
-        temperature.value.shift()
-      }
+      throttledGetCurrentTime.value(data.temperature)
+     
       myChart1.value.setOption({
         series: [
           {
@@ -471,7 +500,7 @@ export default {
             <div id="square1" class="square">
               <div class="label"></div>
               <div class="temperature-container">
-                <span class="temperature"></span>
+               
                 <span class="unit">{{ timeOffline1 }}</span>
               </div>
               <div class="icon-container">
@@ -481,7 +510,7 @@ export default {
             <div id="square2" class="square">
               <div class="label"></div>
               <div class="temperature-container">
-                <span class="temperature"></span>
+               
                 <span class="unit">{{ pressStatus1 }}</span>
               </div>
               <div class="icon-container">
@@ -505,7 +534,7 @@ export default {
               <div class="label"></div>
               <div class="temperature-container">
                 <span class="temperature"></span>
-                <span class="unit">{{tempDiff1}}</span>
+                <span class="unit">{{ tempDiff1 }}</span>
               </div>
               <div class="icon-container">
                 <div class="icon"></div>
@@ -525,7 +554,7 @@ export default {
               <div class="label"></div>
               <div class="temperature-container">
                 <span class="temperature"></span>
-                <span class="unit">{{ deviceAddr}}</span>
+                <span class="unit">{{ deviceAddr }}</span>
               </div>
               <div class="icon-container">
                 <div class="icon"></div>
