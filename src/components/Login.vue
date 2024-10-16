@@ -32,20 +32,20 @@ export default {
 
 
          // 3.本地服务器得验证8080端口
-         const result = await myserver.get('/login')
-          console.log(result)
-         console.log(result.data.username)
+        //  const result = await myserver.get('/login')
+        //   console.log(result)
+        //  console.log(result.data.username)
 
 
       // 1.此文件里面得验证
-      // if(name===username&&password==password1){
-      //   router.push({
-      //         path: '/home/upload',
-      //         query:{
-      //             name,
-      //             password,
-      //         }
-      //     })
+      if(name===username&&password==password1){
+        router.push({
+              path: '/home/upload',
+              query:{
+                  name,
+                  password,
+              }
+          })
 
 
       // 2.本地moke得验证
@@ -59,15 +59,15 @@ export default {
     //       })
 
 
-    if(name === result.data.username&&password === result.data.password){
+    // if(name === result.data.username&&password === result.data.password){
 
-      router.push({
-              path: '/home/upload',
-              query:{
-                  name,
-                  password,
-              }
-          })
+    //   router.push({
+    //           path: '/home/upload',
+    //           query:{
+    //               name,
+    //               password,
+    //           }
+    //       })
     }else{
       err()
 
